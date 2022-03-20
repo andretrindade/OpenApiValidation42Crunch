@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@xliic/cicd-core-node": "^5.6.0",
+    "axios": "^0.26.1",
+    "blob": "^0.1.0",
+    "form-data": "^4.0.0",
+    "fs-blob-store": "^6.0.0"
+  }
+}
