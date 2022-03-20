@@ -1,9 +1,9 @@
 {
     "crunch_API_KEY" : "The API token to access 42Crunch Platform. Please create free account at https://platform.42crunch.com/register and follow hese steps to configure API_TOKEN https://docs.42crunch.com/latest/content/tasks/integrate_github_actions.htm" ,
 
-    "pathFile" : "C:\\Users\\André\\Downloads\\api-security-audit-action-2\\api-security",
+    "caminhoDoArquivo" : "C:\\Users\\André\\Downloads\\api-security-audit-action-2\\api-security",
     
-    "files":[
-        "openAPI.json"
+    "arquivos":[
+        "teste.yaml"
     ]
 }

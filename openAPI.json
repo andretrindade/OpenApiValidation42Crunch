@@ -1,118 +1,118 @@
 {
-   "openapi": "3.0.0",
-   "info": {
-      "title": "API Payment Initiation - Open Banking Brasil",
-      "description": "API de Iniciação de Pagamentos, responsável por viabilizar as operações de iniciação de pagamentos para o Open Banking Brasil.\nPara cada uma das formas de pagamento previstas é necessário obter prévio consentimento do cliente através dos `endpoints` dedicados ao consentimento nesta API.\n\n# Orientações\nNo diretório de participantes duas `Roles` estão relacionadas à presente API:\n- `CONTA`, referente às instituições detentoras de conta participantes do Open Banking Brasil;\n- `PAGTO`, referente às instituições iniciadoras de transação de pagamento de conta participantes do Open Banking Brasil.\nOs tokens utilizados para consumo dos `endpoints` desta API devem possuir os `scopes` `openid` e `payments`.\nEsta API não requer a implementação de `permissions` para sua utilização.\nTodas as requisições e respostas devem ser assinadas seguindo o protocolo estabelecido na sessão <a href=\"https://openbanking-brasil.github.io/areadesenvolvedor/#assinaturas\" target=\"_blank\">Assinaturas</a> do guia de segurança.\n\n## Assinatura de payloads\n\nNo contexto da API Payment Initiation, os `payloads` de mensagem que trafegam tanto por parte da instituição iniciadora de transação de pagamento quanto por parte da instituição detentora\nde conta devem estar assinados. Para o processo de assinatura destes `payloads` as instituições devem seguir as especificações de segurança publicadas no Portal do desenvolvedor:\n\n- Certificados exigidos para assinatura de mensagens:\n[Padrões de certificados digitais Open Banking Brasil](https://github.com/OpenBanking-Brasil/specs-seguranca/blob/main/open-banking-brasil-certificate-standards-1_ID1.md#certificado-de-assinatura-certificadoassinatura)\n\n- Como assinar o payload JWS: [https://openbanking-brasil.github.io/areadesenvolvedor/#como-assinar-o-payload](https://openbanking-brasil.github.io/areadesenvolvedor/#como-assinar-o-payload)\n\n## Controle de acesso\n\nO endpoint de consulta de pagamento GET /pix/payments/{​​​paymentId}​​​ deve suportar acesso a partir de access_token emitido por meio de um grant_type do tipo `client credentials`, como opção do uso do token vinculado ao consentimento (hybrid flow).\n\nPara evitar vazamento de informação, a detentora deve validar que o pagamento consultado pertence ao ClientId que o criou e, caso haja divergências, retorne um erro HTTP 400.\n",
-      "version": "1.0.1",
-      "license": {
-         "name": "Apache 2.0",
-         "url": "https://www.apache.org/licenses/LICENSE-2.0"
-      },
-      "contact": {
-         "name": "Governança do Open Banking Brasil – Especificações",
-         "email": "gt-interfaces@openbankingbr.org",
-         "url": "https://openbanking-brasil.github.io/areadesenvolvedor/"
-      }
-   },
-   "servers": [
-      {
-         "url": "https://api.banco.com.br/open-banking/payments/v1",
-         "description": "Servidor de Produção"
-      },
-      {
-         "url": "https://apih.banco.com.br/open-banking/payments/v1",
-         "description": "Servidor de Homologação"
-      }
-   ],
-   "tags": [
-      {
-         "name": "Pagamentos",
-         "description": "teste"
-      }
-   ],
-   "paths": {
-      "/consents": {
-         "post": {
-            "tags": [
-               "Pagamentos"
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Payment Initiation - Open Banking Brasil",
+    "description": "API de Iniciação de Pagamentos, responsável por viabilizar as operações de iniciação de pagamentos para o Open Banking Brasil.\nPara cada uma das formas de pagamento previstas é necessário obter prévio consentimento do cliente através dos `endpoints` dedicados ao consentimento nesta API.\n\n# Orientações\nNo diretório de participantes duas `Roles` estão relacionadas à presente API:\n- `CONTA`, referente às instituições detentoras de conta participantes do Open Banking Brasil;\n- `PAGTO`, referente às instituições iniciadoras de transação de pagamento de conta participantes do Open Banking Brasil.\nOs tokens utilizados para consumo dos `endpoints` desta API devem possuir os `scopes` `openid` e `payments`.\nEsta API não requer a implementação de `permissions` para sua utilização.\nTodas as requisições e respostas devem ser assinadas seguindo o protocolo estabelecido na sessão <a href=\"https://openbanking-brasil.github.io/areadesenvolvedor/#assinaturas\" target=\"_blank\">Assinaturas</a> do guia de segurança.\n\n## Assinatura de payloads\n\nNo contexto da API Payment Initiation, os `payloads` de mensagem que trafegam tanto por parte da instituição iniciadora de transação de pagamento quanto por parte da instituição detentora\nde conta devem estar assinados. Para o processo de assinatura destes `payloads` as instituições devem seguir as especificações de segurança publicadas no Portal do desenvolvedor:\n\n- Certificados exigidos para assinatura de mensagens:\n[Padrões de certificados digitais Open Banking Brasil](https://github.com/OpenBanking-Brasil/specs-seguranca/blob/main/open-banking-brasil-certificate-standards-1_ID1.md#certificado-de-assinatura-certificadoassinatura)\n\n- Como assinar o payload JWS: [https://openbanking-brasil.github.io/areadesenvolvedor/#como-assinar-o-payload](https://openbanking-brasil.github.io/areadesenvolvedor/#como-assinar-o-payload)\n\n## Controle de acesso\n\nO endpoint de consulta de pagamento GET /pix/payments/{​​​paymentId}​​​ deve suportar acesso a partir de access_token emitido por meio de um grant_type do tipo `client credentials`, como opção do uso do token vinculado ao consentimento (hybrid flow).\n\nPara evitar vazamento de informação, a detentora deve validar que o pagamento consultado pertence ao ClientId que o criou e, caso haja divergências, retorne um erro HTTP 400.\n",
+    "version": "1.0.1",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0"
+    },
+    "contact": {
+      "name": "Governança do Open Banking Brasil – Especificações",
+      "email": "gt-interfaces@openbankingbr.org",
+      "url": "https://openbanking-brasil.github.io/areadesenvolvedor/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.banco.com.br/open-banking/payments/v1",
+      "description": "Servidor de Produção"
+    },
+    {
+      "url": "https://apih.banco.com.br/open-banking/payments/v1",
+      "description": "Servidor de Homologação"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Pagamentos",
+      "description": "teste"
+    }
+  ],
+  "paths": {
+    "/consents": {
+      "post": {
+        "tags": [
+          "Pagamentos"
+        ],
+        "summary": "Criar consentimento para a iniciação de pagamento.",
+        "operationId": "paymentsPostConsents",
+        "description": "Método de criação do consentimento para a iniciação de pagamento.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Authorization"
+          },
+          {
+            "$ref": "#/components/parameters/xFapiAuthDate"
+          },
+          {
+            "$ref": "#/components/parameters/xFapiCustomerIpAddress"
+          },
+          {
+            "$ref": "#/components/parameters/xFapiInteractionId"
+          },
+          {
+            "$ref": "#/components/parameters/xCustomerUserAgent"
+          },
+          {
+            "$ref": "#/components/parameters/XIdempotencyKey"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/jwt": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePaymentConsent"
+              }
+            }
+          },
+          "description": "Payload para criação do consentimento para iniciação do pagamento.",
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/201PaymentsConsentsConsentCreated"
+          }
+        },
+        "security": [
+          {
+            "OpenId": [
+              "openid"
             ],
-            "summary": "Criar consentimento para a iniciação de pagamento.",
-            "operationId": "paymentsPostConsents",
-            "description": "Método de criação do consentimento para a iniciação de pagamento.",
-            "parameters": [
-               {
-                  "$ref": "#/components/parameters/Authorization"
-               },
-               {
-                  "$ref": "#/components/parameters/xFapiAuthDate"
-               },
-               {
-                  "$ref": "#/components/parameters/xFapiCustomerIpAddress"
-               },
-               {
-                  "$ref": "#/components/parameters/xFapiInteractionId"
-               },
-               {
-                  "$ref": "#/components/parameters/xCustomerUserAgent"
-               },
-               {
-                  "$ref": "#/components/parameters/XIdempotencyKey"
-               }
-            ],
-            "requestBody": {
-               "content": {
-                  "application/jwt": {
-                     "schema": {
-                        "$ref": "#/components/schemas/CreatePaymentConsent"
-                     }
-                  }
-               },
-               "description": "Payload para criação do consentimento para iniciação do pagamento.",
-               "required": true
-            },
-            "responses": {
-               "201": {
-                  "$ref": "#/components/responses/201PaymentsConsentsConsentCreated"
-               }
-            },
-            "security": [
-               {
-                  "OpenId": [
-                     "openid"
-                  ],
-                  "OAuth2ClientCredentials": [
-                     "payments"
-                  ]
-               }
+            "OAuth2ClientCredentials": [
+              "payments"
             ]
-         }
-      },
-      "/consents/{consentId}": {
-         "get": {
-            "tags": [
-               "Pagamentos"
-            ],
-            "summary": "Consultar consentimento para iniciação de pagamento.",
-            "operationId": "paymentsGetConsentsConsentId",
-            "description": "Método para consulta do consentimento para a iniciação de pagamento.",
-            "parameters": [
-               {
-                  "$ref": "#/components/parameters/consentId"
-               }              
-            ],
-            "responses": {
-               "200": {
-                  "$ref": "#/components/responses/200PaymentsConsentsConsentIdRead"
-               }
-            },
-            "security": [
-               {
-                  "OAuth2ClientCredentials": [
-                     "payments"
-                  ]
-               }
-            ]
-         }
+          }
+        ]
       }
-   }
+    },
+    "/consents/{consentId}": {
+      "get": {
+        "tags": [
+          "Pagamentos"
+        ],
+        "summary": "Consultar consentimento para iniciação de pagamento.",
+        "operationId": "paymentsGetConsentsConsentId",
+        "description": "Método para consulta do consentimento para a iniciação de pagamento.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/consentId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200PaymentsConsentsConsentIdRead"
+          }
+        },
+        "security": [
+          {
+            "OAuth2ClientCredentials": [
+              "payments"
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

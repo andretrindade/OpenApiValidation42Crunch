@@ -26,8 +26,6 @@ async function excluirColecao(colecaoId) {
   console.log("> Excluindo coleção " + colecaoId);
 
   const respose = await axios(configAxio);
-
-  
 }
 
 async function excluirColecaoSeExistir(nmeColecao) {
@@ -38,7 +36,7 @@ async function excluirColecaoSeExistir(nmeColecao) {
 
   if (existeColecao && existeColecao.length > 0) {
     console.log("> Coleção já existe");
-    existeColecao.forEach((element) => {
+    existeColecao.forEach(async (element) => {
       await excluirColecao(element.desc.id);
     });
   }
