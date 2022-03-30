@@ -6,11 +6,11 @@ function recuperaArquivosParaSeremEnviados() {
   let elements = [];
 
   config.arquivos.forEach((x) => {
-    let pathFull = `${config.caminhoDoArquivo}/${x}`;
-    let caminhoCompletoJson = `${process.cwd()}/arquivosGeradosJson/${path.parse(x).name}.json`;
+    let nmeArquivo = path.parse(x).name;
+    let caminhoCompletoJson = `${process.cwd()}/arquivosGeradosJson/${nmeArquivo}.json`;
     elements.push({
-      nmeArquivo: path.parse(x).name,
-      caminhoCompletoYaml: pathFull,
+      nmeArquivo: nmeArquivo,
+      caminhoCompletoYaml: x,
       caminhoCompletoJson: caminhoCompletoJson,
     });
   });

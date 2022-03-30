@@ -1,9 +1,9 @@
 {
-    "crunch_API_KEY" : "The API token to access 42Crunch Platform. Please create free account at https://platform.42crunch.com/register and follow hese steps to configure API_TOKEN https://docs.42crunch.com/latest/content/tasks/integrate_github_actions.htm" ,
+    "crunch_API_KEY" : "b9d00cec-5bad-4c36-9a63-fc6ce5e9a21b" ,
 
-    "caminhoDoArquivo" : "C:\\Users\\André\\Downloads\\api-security-audit-action-2\\api-security",
-    
     "arquivos":[
-        "teste.yaml"
+        "/home/andretrindade/sensedia/workspace/areadesenvolvedor/documentation/source/swagger/swagger_accounts_apis.yaml",
+        "/home/andretrindade/sensedia/workspace/areadesenvolvedor/documentation/source/swagger/swagger_acquiring_services_apis.yaml",
+        "/home/andretrindade/sensedia/workspace/areadesenvolvedor/documentation/source/swagger/swagger_financings_apis.yaml"
     ]
 }
