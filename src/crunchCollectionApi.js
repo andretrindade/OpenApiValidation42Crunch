@@ -23,7 +23,6 @@ async function excluirColecao(colecaoId) {
       "X-API-KEY": config.crunch_API_KEY,
     },
   };
-  console.log("> Excluindo coleção " + colecaoId);
 
   const respose = await axios(configAxio);
 }
@@ -35,11 +34,17 @@ async function excluirColecaoSeExistir(nmeColecao) {
   const existeColecao = colecoes.filter((x) => x.desc.name === nmeColecao);
 
   if (existeColecao && existeColecao.length > 0) {
-    console.log("> Coleção já existe");
     existeColecao.forEach(async (element) => {
       await excluirColecao(element.desc.id);
     });
   }
+}
+
+async function excluirTodasColecoes(){
+  colecoes = await recuperaColecoes();
+  colecoes.forEach(async (element) => {
+    await excluirColecao(element.desc.id);
+  });
 }
 
 async function criarColecao(nmeColecao) {
@@ -62,15 +67,13 @@ async function criarColecao(nmeColecao) {
   };
 
   let cid = "";
-  console.log("> Criando coleção " + nmeColecao);
   const respose = await axios(configAxio);
   cid = respose.data.desc.id;
-
-  console.log("> Coleção criada com sucesso.  " + cid);
 
   return cid;
 }
 
 module.exports = {
   criarColecao: criarColecao,
+  excluirTodasColecoes : excluirTodasColecoes
 };
